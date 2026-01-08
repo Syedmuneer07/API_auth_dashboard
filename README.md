@@ -308,6 +308,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 For issues, questions, or suggestions, please open an issue in the repository.
 
+or 
+
+Emailto: syedmuneerzakk@gmail.com
+
+
 ---
 
 **Built with ❤️ using React and Vite**
