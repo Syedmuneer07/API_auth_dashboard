@@ -36,19 +36,19 @@ const Login = ({ onLoginSuccess }) => {
   };
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
-      <div className="bg-white rounded-xl shadow-xl w-full max-w-md p-8">
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
-            <User className="w-8 h-8 text-blue-600" />
+    <div className="min-h-screen bg-black flex items-center justify-center p-4">
+      <div className="bg-[#171717] border border-gray-800 rounded-xl w-full max-w-md p-10">
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-[#1a1a1a] border border-gray-800 rounded-xl mb-5">
+            <User className="w-8 h-8 text-gray-300" />
           </div>
-          <h1 className="text-2xl font-bold text-gray-900">Welcome Back</h1>
-          <p className="text-gray-600 mt-2">Sign in to access your dashboard</p>
+          <h1 className="text-2xl font-semibold text-white mb-2">Welcome Back</h1>
+          <p className="text-gray-400 text-sm">Sign in to access your dashboard</p>
         </div>
         
-        <div className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-gray-300 mb-2.5">
               Email Address
             </label>
             <input
@@ -56,15 +56,15 @@ const Login = ({ onLoginSuccess }) => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              onKeyPress={(e) => e.key === 'Enter' && handleSubmit(e)}
+              onKeyPress={(e) => e.key === 'Enter' && !loading && handleSubmit(e)}
               placeholder="Enter your Email Address"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+              className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg focus:ring-2 focus:ring-gray-700 focus:border-gray-700 outline-none transition text-white placeholder-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={loading}
             />
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-gray-300 mb-2.5">
               Password
             </label>
             <input
@@ -72,9 +72,9 @@ const Login = ({ onLoginSuccess }) => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              onKeyPress={(e) => e.key === 'Enter' && handleSubmit(e)}
+              onKeyPress={(e) => e.key === 'Enter' && !loading && handleSubmit(e)}
               placeholder="Enter your password"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+              className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg focus:ring-2 focus:ring-gray-700 focus:border-gray-700 outline-none transition text-white placeholder-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={loading}
             />
           </div>
@@ -82,25 +82,27 @@ const Login = ({ onLoginSuccess }) => {
           {error && <ErrorMessage message={error} />}
           
           <button
-            onClick={handleSubmit}
+            type="submit"
             disabled={loading}
-            className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-medium py-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+            className="w-full bg-white hover:bg-gray-100 disabled:bg-gray-800 disabled:opacity-50 text-black hover:text-black disabled:text-gray-400 font-medium py-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 disabled:cursor-not-allowed"
           >
             {loading ? (
               <>
                 <Loader2 className="w-5 h-5 animate-spin" />
-                Signing in...
+                <span>Signing in...</span>
               </>
             ) : (
               'Sign In'
             )}
           </button>
-        </div>
+        </form>
         
-        <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-          <p className="text-sm text-blue-800 font-medium mb-1">Demo Credentials:</p>
-          <p className="text-xs text-blue-600">Email: eve@demo.com</p>
-          <p className="text-xs text-blue-600">Password: cityslicka</p>
+        <div className="mt-8 p-4 bg-[#1a1a1a] border border-gray-800 rounded-lg">
+          <p className="text-sm text-gray-300 font-medium mb-2">Demo Credentials:</p>
+          <div className="space-y-1.5">
+            <p className="text-xs text-gray-400">Email: <span className="text-gray-300">eve@demo.com</span></p>
+            <p className="text-xs text-gray-400">Password: <span className="text-gray-300">cityslicka</span></p>
+          </div>
         </div>
       </div>
     </div>
