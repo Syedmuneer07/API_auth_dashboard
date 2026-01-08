@@ -57,7 +57,7 @@ const Login = ({ onLoginSuccess }) => {
               value={formData.email}
               onChange={handleChange}
               onKeyPress={(e) => e.key === 'Enter' && handleSubmit(e)}
-              placeholder="eve@reqres.in"
+              placeholder="Enter your Email Address"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
               disabled={loading}
             />
@@ -99,7 +99,7 @@ const Login = ({ onLoginSuccess }) => {
         
         <div className="mt-6 p-4 bg-blue-50 rounded-lg">
           <p className="text-sm text-blue-800 font-medium mb-1">Demo Credentials:</p>
-          <p className="text-xs text-blue-600">Email: eve@reqres.in</p>
+          <p className="text-xs text-blue-600">Email: eve@demo.com</p>
           <p className="text-xs text-blue-600">Password: cityslicka</p>
         </div>
       </div>

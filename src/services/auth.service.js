@@ -8,7 +8,7 @@ import {
 export const authService = {
   login: async (email, password) => {
     // Mocked authentication for frontend demo
-    if (email === 'eve@reqres.in' && password === 'cityslicka') {
+    if (email === 'eve@demo.com' && password === 'cityslicka') {
       // Simulate successful login with a fake token
       const fakeToken = 'mocked-jwt-token-' + Date.now();
       const expiryTime = Date.now() + TOKEN_EXPIRY_DURATION;

@@ -6,6 +6,6 @@ const Loader = ({ message = 'Loading...' }) => (
     <p className="text-gray-600 text-sm">{message}</p>
   </div>
 );
-//eve@reqres.in' and password: 'cityslicka'.
+//eve@demo.com' and password: 'cityslicka'.
 
 export default Loader;
